@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
-export default function Home() {
+export default function Home({articles}) {
+  console.log(articles);
   return (
     <div>
       <Head>
@@ -14,6 +15,17 @@ export default function Home() {
   )
 }
 
+export const getStaticProps = async() => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+  const articles = await res.json()
+
+  return{
+    props:{
+      articles
+    }
+  }
+    
+}
 // There are three ways to fetch data/props
 // 1. getStaticProps - this is done at build time
 // 2. getServerSideProps -  this allows us to fetch data on every request (slower)
