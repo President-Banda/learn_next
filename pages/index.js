@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 export default function Home({articles}) {
-  console.log(articles);
+  //console.log(articles);
   return (
     <div>
       <Head>
@@ -10,7 +10,10 @@ export default function Home({articles}) {
         <meta name='keywords' content='web development, programming' />
         </title>
       </Head>
-      <h1>Welcome To Next</h1>
+      {/* <h1>Welcome To Next</h1> */}
+      {articles.map((article) => (
+        <h3>{article.title}</h3>
+      ))}
     </div>
   )
 }
