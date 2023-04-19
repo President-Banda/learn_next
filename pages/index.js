@@ -6,12 +6,12 @@ export default function Home({articles}) {
   //console.log(articles);
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>
         Learning Is Fun
         <meta name='keywords' content='web development, programming' />
         </title>
-      </Head>
+      </Head> */}
       {/* <h1>Welcome To Next</h1> */}
       <ArticleList articles={articles} />
     </div>
