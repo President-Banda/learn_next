@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const article = ({article}) => {
     // const router = useRouter();
@@ -7,6 +8,8 @@ const article = ({article}) => {
     return <>
         <h1>{article.title}</h1>
         <p>{article.body}</p>
+        <br />
+        <Link href='/'>Back</Link>
     </>
 }
 
